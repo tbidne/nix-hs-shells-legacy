@@ -31,13 +31,13 @@ jobs:
         run: nix-shell test/cabal.nix --command 'which ghc && which cabal && exit'
 
       - name: cabal-shell flake
-        run: nix-shell test/cabal.nix --argstr test flake --command 'which ghc && which cabal && exit'
+        run: nix-shell test/cabal.nix --arg use-hash false --command 'which ghc && which cabal && exit'
 
       - name: stack-shell hash
         run: nix-shell test/stack.nix --command 'which ghc && which stack && exit'
 
       - name: stack-shell flake
-        run: nix-shell test/stack.nix --argstr test flake --command 'which ghc && which stack && exit'
+        run: nix-shell test/stack.nix --arg use-hash false --command 'which ghc && which stack && exit'
 
       - name: Formatting
         run: nix run github:tbidne/nix-hs-tools/0.6.1#nixpkgs-fmt -- --check
