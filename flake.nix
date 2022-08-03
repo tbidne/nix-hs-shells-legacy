@@ -1,5 +1,5 @@
 {
-  description = "Nix Utils";
+  description = "Provides minimal cabal and stack shells.";
   inputs.flake-compat = {
     url = "github:edolstra/flake-compat";
     flake = false;
@@ -11,10 +11,10 @@
     , self
     }:
     let
-      with_hof = { hash-or-flake = nix-utils.hash-or-flake; };
+      with_hof = { pkgs-hash-or-flake = nix-utils.pkgs-hash-or-flake; };
     in
     {
-      cabal_base = input: import ./lib/cabal_base.nix (input // with_hof);
-      stack_base = input: import ./lib/stack_base.nix (input // with_hof);
+      cabal-shell = input: import ./lib/cabal-shell.nix (input // with_hof);
+      stack-shell = input: import ./lib/stack-shell.nix (input // with_hof);
     };
 }

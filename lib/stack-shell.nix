@@ -1,14 +1,14 @@
-{ compilerVersion
+{ ghc-version
 , name
-, stackYaml
+, stack-yaml
 , hash ? null
 , flake-path ? null
-, hash-or-flake
+, pkgs-hash-or-flake
 }:
 
 let
-  pkgs = hash-or-flake { inherit flake-path hash; };
-  compiler = pkgs.haskell.packages."${compilerVersion}";
+  pkgs = pkgs-hash-or-flake { inherit flake-path hash; };
+  compiler = pkgs.haskell.packages."${ghc-version}";
 in
 pkgs.haskell.lib.buildStackProject {
   inherit name;
@@ -22,5 +22,5 @@ pkgs.haskell.lib.buildStackProject {
 
   ghc = compiler.ghc;
 
-  STACK_YAML = stackYaml;
+  STACK_YAML = stack-yaml;
 }
