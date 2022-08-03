@@ -4,7 +4,7 @@
     url = "github:edolstra/flake-compat";
     flake = false;
   };
-  inputs.nix-utils.url = "github:tbidne/nix-utils";
+  inputs.nix-utils.url = "github:tbidne/nix-utils/0.1";
   outputs =
     { flake-compat
     , nix-utils
