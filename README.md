@@ -31,6 +31,8 @@ The cabal shell requires:
 cabal-shell {
   ghc-version = "ghc923";
   hash = "b39924fc7764c08ae3b51beef9a3518c414cdb7d";
+  # optional, corresponds to nixpkgs determined by hash
+  sha256 = "1yivdc9k1qcr29yxq9pz4qs2i29wgxj5y550kp0lz2wzp45ksi1x";
 }
 
 cabal-shell {
@@ -58,6 +60,8 @@ stack-shell {
   name = "my-package-name";
   stack-yaml = "stack.yaml";
   hash = "b39924fc7764c08ae3b51beef9a3518c414cdb7d";
+  # optional, corresponds to nixpkgs determined by hash
+  sha256 = "1yivdc9k1qcr29yxq9pz4qs2i29wgxj5y550kp0lz2wzp45ksi1x";
 }
 
 stack-shell {
