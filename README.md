@@ -39,7 +39,7 @@ cabal-shell {
   ghc-version = "ghc923";
   flake-path = ./flake.lock;
   # optional
-  system = "x86_64-linux";
+  extra = {};
 }
 ```
 
@@ -72,6 +72,6 @@ stack-shell {
   stack-yaml = "stack.yaml";
   flake-path = ./flake.lock;
   # optional
-  system = "x86_64-linux";
+  extra = {};
 }
 ```
