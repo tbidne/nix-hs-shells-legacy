@@ -37,11 +37,11 @@
         "flake-compat": "flake-compat_2"
       },
       "locked": {
-        "lastModified": 1659525873,
-        "narHash": "sha256-3CzyRRkRdGKb0J2wRFjBmxQjC5c5/vryjispI2PDLFw=",
+        "lastModified": 1659577007,
+        "narHash": "sha256-EPBqSRjr2Dv/ksENsJ+m/b+CyjSE1QZlhQWxyNdmf3A=",
         "owner": "tbidne",
         "repo": "nix-utils",
-        "rev": "96945de82a7626240e30afec51efef1b533b8e91",
+        "rev": "6f24ae957474ca47ce25f3689f90ab9777b77cc2",
         "type": "github"
       },
       "original": {

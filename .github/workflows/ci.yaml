@@ -30,11 +30,17 @@ jobs:
       - name: cabal-shell hash
         run: nix-shell test/cabal.nix --command 'which ghc && which cabal && exit'
 
+      - name: cabal-shell hash with sha
+        run: nix-shell test/cabal.nix --arg with-sha true --command 'which ghc && which cabal && exit'
+
       - name: cabal-shell flake
         run: nix-shell test/cabal.nix --arg use-hash false --command 'which ghc && which cabal && exit'
 
       - name: stack-shell hash
         run: nix-shell test/stack.nix --command 'which ghc && which stack && exit'
+
+      - name: stack-shell hash with sha
+        run: nix-shell test/stack.nix --arg with-sha true --command 'which ghc && which stack && exit'
 
       - name: stack-shell flake
         run: nix-shell test/stack.nix --arg use-hash false --command 'which ghc && which stack && exit'
