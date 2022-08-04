@@ -1,21 +1,26 @@
 { use-hash ? true
 , with-sha ? false
+, with-system ? false
 }:
 
 let
-  hash-set = { hash = "b39924fc7764c08ae3b51beef9a3518c414cdb7d"; };
-  sha-set = { sha256 = "1yivdc9k1qcr29yxq9pz4qs2i29wgxj5y550kp0lz2wzp45ksi1x"; };
-  pkgs-hash =
-    if with-sha
-    then hash-set // sha-set
-    else hash-set;
+  main = import ../default.nix;
+  add-non-nulls = main.inputs.nix-utils.add-non-nulls;
 
-  pkgs-flake = { flake-path = ./test-flake.lock; };
+  hash = "b39924fc7764c08ae3b51beef9a3518c414cdb7d";
+  flake-path = ./test-flake.lock;
+  sha256 = "1yivdc9k1qcr29yxq9pz4qs2i29wgxj5y550kp0lz2wzp45ksi1x";
+  system = "x86_64-linux";
+
+  pkgs-others = [
+    { key = "sha256"; val = if with-sha then sha256 else null; }
+    { key = "system"; val = if with-system then system else null; }
+  ];
 
   pkgs-input =
     if use-hash
-    then pkgs-hash
-    else pkgs-flake;
+    then add-non-nulls { inherit hash; } pkgs-others
+    else add-non-nulls { inherit flake-path; } pkgs-others;
 
   stack-input = {
     ghc-version = "ghc923";
