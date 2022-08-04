@@ -2,7 +2,7 @@
 , hash ? null
 , sha256 ? null
 , flake-path ? null
-, extra ? null
+, extra ? {}
 , pkgs-hash-or-flake
 }:
 
