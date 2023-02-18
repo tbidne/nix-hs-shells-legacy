@@ -1,10 +1,14 @@
+# UPDATE 2023-02-18
+
+## This repository -- intended to make haskell CI easier -- has been deprecated in favor of the `haskell/actions` github action. 
+
+---
+
 <div align="center">
 
 # Nix HS Shells
 
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/tag/tbidne/nix-hs-shells?include_prereleases&sort=semver)](https://github.com/tbidne/nix-hs-shells/releases/)
 [![MIT](https://img.shields.io/github/license/tbidne/nix-hs-shells?color=blue)](https://opensource.org/licenses/MIT)
-[![build](https://img.shields.io/github/workflow/status/tbidne/nix-hs-shells/ci/main)](https://github.com/tbidne/nix-hs-shells/actions/workflows/ci.yaml)
 
 </div>
 
